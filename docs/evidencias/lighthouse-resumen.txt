@@ -7,3 +7,10 @@ nuevo-explorar-movil         99 100 100 100  LCP 2.3 s  CLS 0  TBT 0 ms  peso 
 nuevo-ingreso-movil          95 100 100 100  LCP 2.9 s  CLS 0  TBT 0 ms  peso Total size was 218 KiB  reqs 42
 nuevo-inicio-escritorio     100 100 100 100  LCP 0.8 s  CLS 0  TBT 0 ms  peso Total size was 398 KiB  reqs 47
 nuevo-inicio-movil           93 100 100 100  LCP 3.2 s  CLS 0  TBT 0 ms  peso Total size was 398 KiB  reqs 47
+
+Sitio publicado (https://camilo00410.github.io/casa-activa/), HTTP/2 con gzip:
+
+explorar-movil              100 100 100 100  LCP 1.8 s  CLS 0  TBT 40 ms  peso Total size was 557 KiB  reqs 48
+ingreso-movil               100 100 100 100  LCP 1.8 s  CLS 0  TBT 10 ms  peso Total size was 219 KiB  reqs 42
+inicio-escritorio           100 100 100 100  LCP 0.5 s  CLS 0  TBT 0 ms  peso Total size was 399 KiB  reqs 47
+inicio-movil                 99 100 100 100  LCP 2.0 s  CLS 0  TBT 60 ms  peso Total size was 399 KiB  reqs 47

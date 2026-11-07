@@ -6,11 +6,14 @@ export const CONFIG = {
   institucion: 'Corporación Unificada Nacional de Educación Superior – CUN',
   programa: 'Ingeniería de Sistemas',
   asignatura: 'Ingeniería Web',
-  grupo: '54483/26V04',
   actividad: 'Actividad de Construcción Aplicada: wireframe, mockup y prototipo de una página de recomendaciones saludables',
   docente: 'Sergio Alexander Mora',
   fechaEntrega: '8 de noviembre de 2026',
-  integrantes: ['Camilo Andres Loaiza Bustamante', 'Edwin Alexis Paez Cetina'],
+    /** Cada integrante está inscrito en su propio grupo de la asignatura. */
+  integrantes: [
+    { nombre: 'Camilo Andres Loaiza Bustamante', grupo: '54481/26V04' },
+    { nombre: 'Edwin Alexis Paez Cetina', grupo: '54483/26V04' },
+  ],
   urlPrototipo: 'https://camilo00410.github.io/casa-activa/',
   urlRepositorio: 'https://github.com/camilo00410/casa-activa',
   /** Aportes de cada integrante para el Anexo A. */

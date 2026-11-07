@@ -64,11 +64,11 @@ function portada() {
     <div>
       <p class="titulo">${CONFIG.actividad}</p>
     </div>
-    <div>${CONFIG.integrantes.map((i) => `<p>${i}</p>`).join('')}</div>
+    <div>${CONFIG.integrantes.map((i) => `<p>${i.nombre}, grupo ${i.grupo}</p>`).join('')}</div>
     <div>
       <p>${CONFIG.institucion}</p>
       <p>Programa de ${CONFIG.programa}</p>
-      <p>${CONFIG.asignatura}, grupo ${CONFIG.grupo}</p>
+      <p>${CONFIG.asignatura}</p>
       <p>Docente: ${CONFIG.docente}</p>
       <p>Fecha de entrega: ${CONFIG.fechaEntrega}</p>
     </div>

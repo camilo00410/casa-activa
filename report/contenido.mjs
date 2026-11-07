@@ -157,21 +157,22 @@ export function construirContenido() {
 
   // ─────────────────────────── ANÁLISIS RNF ───────────────────────────
   agregar(seccion('Análisis de requerimientos no funcionales'), p(
-    'Estos requerimientos se trataron con el mismo criterio: en lugar de afirmar que se cumplen, se definió cómo medirlos. Antes de cambiar el proyecto se midió el MVP, de modo que los resultados se pueden comparar, como muestra la {{tab:lighthouse}}. Las mediciones de Lighthouse son locales, con compresión activada como la del hosting previsto.',
+    'Estos requerimientos se trataron con el mismo criterio: en lugar de afirmar que se cumplen, se definió cómo medirlos. Antes de cambiar el proyecto se midió el MVP, de modo que los resultados se pueden comparar, como muestra la {{tab:lighthouse}}. El MVP se midió en local, porque no estaba publicado, y el prototipo se midió tanto en local, para compararlos en iguales condiciones, como sobre el sitio publicado.',
   ), tab('Comparación medida entre el MVP y el prototipo final con Lighthouse', ['Medición', 'Rendimiento', 'Accesibilidad', 'Buenas prácticas', 'SEO', 'LCP'], [
-    ['MVP, móvil', '84', '95', '96', '91', '4,5 s'],
-    ['MVP, escritorio', '99', '95', '96', '91', '0,9 s'],
-    ['Inicio, móvil', '93', '100', '100', '100', '3,2 s'],
-    ['Inicio, escritorio', '100', '100', '100', '100', '0,8 s'],
-    ['Explorar, móvil', '99', '100', '100', '100', '2,3 s'],
-    ['Ingreso, móvil', '95', '100', '100', '100', '2,9 s'],
-  ], { anchos: ['21%', '18%', '19%', '16%', '11%', '15%'], clave: 'lighthouse' }));
+    ['MVP, móvil (local)', '84', '95', '96', '91', '4,5 s'],
+    ['MVP, escritorio (local)', '99', '95', '96', '91', '0,9 s'],
+    ['Inicio, móvil (local)', '93', '100', '100', '100', '3,2 s'],
+    ['Inicio, móvil (publicado)', '99', '100', '100', '100', '2,0 s'],
+    ['Inicio, escritorio (publicado)', '100', '100', '100', '100', '0,5 s'],
+    ['Explorar, móvil (publicado)', '100', '100', '100', '100', '1,8 s'],
+    ['Ingreso, móvil (publicado)', '100', '100', '100', '100', '1,8 s'],
+  ], { anchos: ['27%', '17%', '18%', '15%', '10%', '13%'], clave: 'lighthouse' }));
 
   agregar(sub('RNF1. Rendimiento'), p(
     'Se interpretó como la rapidez que percibe una persona con un teléfono y una conexión móvil, no como la velocidad en el computador de quien desarrolla. Por eso se tomó la medición móvil de Lighthouse como referencia, con una meta de 90 o más.',
-    `Las decisiones fueron: no usar un framework, alojar las fuentes y las imágenes en el propio sitio, convertir las imágenes a WebP, declarar sus medidas para evitar saltos de diseño y cargar de forma diferida las que no están a la vista. El JavaScript se transfiere comprimido con unos 68 KiB. La página de inicio pasó de 522 KiB a 398 KiB, aunque con más contenido, y el cambio acumulado de diseño (CLS) quedó en 0.`,
+    `Las decisiones fueron: no usar un framework, alojar las fuentes y las imágenes en el propio sitio, convertir las imágenes a WebP, declarar sus medidas para evitar saltos de diseño y cargar de forma diferida las que no están a la vista. El JavaScript se transfiere comprimido con unos 68 KiB. La página de inicio pasó de 522 KiB a 399 KiB, aunque con más contenido, y el cambio acumulado de diseño (CLS) quedó en 0.`,
     'La primera medición móvil dio 87, por debajo de la meta. No se ajustó la meta: se analizó la causa. El navegador descubría los módulos de JavaScript por niveles, a medida que los leía, y el servidor local no comprimía los archivos, a diferencia del hosting previsto. Se declaró la precarga de los módulos, sin añadir un empaquetador, se activó la compresión y el resultado subió a 93.',
-    'Aun así, el tiempo de carga del elemento principal (LCP) en móvil es de 3,2 s en el inicio, mejor que los 4,5 s del MVP pero por encima de los 2,5 s que Lighthouse considera buenos. La causa es que el contenido se dibuja cuando termina de cargar el JavaScript. Mejorarlo exigiría generar la portada de antemano, lo que se deja como trabajo futuro.',
+    'La medición sobre el sitio publicado, que entrega los archivos con HTTP/2 y compresión, fue mejor: el inicio móvil alcanzó 99 y el tiempo de carga del elemento principal (LCP) bajó de 3,2 s a 2,0 s, por debajo de los 2,5 s que Lighthouse considera buenos. La diferencia muestra que el rendimiento depende también de cómo se sirve el sitio, y que conviene medir donde estará el usuario. Lighthouse simula una red móvil, de modo que estos valores son una referencia y no la experiencia exacta de cada persona.',
   ));
 
   agregar(sub('RNF2. Escalabilidad'), p(
@@ -284,6 +285,8 @@ export function construirContenido() {
   agregar(seccion('Prototipo'), sub('Enlace y acceso'), p(
     `El prototipo está publicado y se puede abrir sin instalar nada: ${enlace(CONFIG.urlPrototipo)}. El código fuente está disponible en ${enlace(CONFIG.urlRepositorio)}. La primera versión del informe enlazaba a una dirección local que solo funcionaba en el computador del autor; publicar el prototipo resuelve ese problema.`,
     'Para evaluarlo no hace falta registrarse. La pantalla de ingreso tiene dos botones de demostración: uno para un usuario de ejemplo, con perfil y ocho semanas de historial, y otro para el administrador. Los datos se guardan en cada navegador, y el enlace «Restablecer datos de demostración» del pie de página los devuelve a su estado inicial.',
+  ), sub('Verificación en el sitio publicado'), p(
+    'Una vez publicado, se repitió el recorrido principal sobre la dirección real: portada, búsqueda, ingreso con la cuenta de demostración, persistencia de la sesión, registro de un hábito, administración y vista móvil. No hubo errores de consola, recursos rotos ni peticiones a terceros.',
   ), sub('Construcción'), p(
     'A diferencia de un prototipo en una herramienta de diseño, que simula la interacción con zonas enlazadas, este es una aplicación que funciona: los datos persisten, las búsquedas se calculan y las recomendaciones cambian según el perfil. Se construyó sobre el código del MVP con HTML, CSS y JavaScript sin framework, lo que mantiene el proyecto legible y sin paso de compilación. Se publica como sitio estático porque la guía pide un enlace con permisos de visualización que el docente pueda abrir, y un sitio estático no tiene tiempo de arranque ni costo de operación.',
   ), fig('../design/arquitectura.png', 'Arquitectura por capas del prototipo', { maxAlto: '12cm', clave: 'arquitectura' }), sub('Flujos de navegación implementados'), p(

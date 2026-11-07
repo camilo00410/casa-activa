@@ -9,7 +9,7 @@ Lo que no se pudo verificar se declara en la sección final, en lugar de asumirl
 |---|---|---|
 | Wireframe de baja fidelidad | Cumplido | 13 pantallas y mapa, en `design/wireframes/png/`. Sin color, tipografía definitiva ni imágenes reales |
 | Mockup de alta fidelidad | Cumplido | 12 pantallas de escritorio y 6 móviles en `design/mockups/`, más láminas de paleta, tipografía, iconografía y componentes |
-| Prototipo navegable | **Pendiente de publicar** | Funciona en local. El informe ya apunta a `https://camilo00410.github.io/casa-activa/` |
+| Prototipo navegable | Cumplido | Publicado en <https://camilo00410.github.io/casa-activa/> y verificado sobre el sitio real |
 | Análisis de requerimientos | Cumplido | Secciones 4 y 5 del informe |
 | Informe en PDF | Cumplido | `entrega/Informe_ACA_Casa_Activa.pdf`. Sus enlaces funcionan cuando el proyecto se publique |
 
@@ -40,8 +40,9 @@ Lo que no se pudo verificar se declara en la sección final, en lugar de asumirl
 
 | Req. | Métrica | MVP | Final | Estado |
 |---|---|---|---|---|
-| RNF1 | Lighthouse rendimiento, móvil | 84 | 93–99 | Cumplido |
-| RNF1 | LCP móvil del inicio | 4,5 s | 3,2 s | Mejoró, pero sigue sobre los 2,5 s considerados buenos |
+| RNF1 | Lighthouse rendimiento, móvil, en local | 84 | 93–99 | Cumplido |
+| RNF1 | Lighthouse rendimiento, móvil, sitio publicado | No publicado | 99–100 | Cumplido |
+| RNF1 | LCP móvil del inicio | 4,5 s en local | 3,2 s en local; 2,0 s publicado | Cumplido en el sitio publicado |
 | RNF1 | Cambio acumulado de diseño (CLS) | 0,018 | 0 | Cumplido |
 | RNF2 | Búsqueda en 10 000 registros | No existía | ≈ 3 ms | Cumplido |
 | RNF3 | Contraseñas | Sin tratamiento | PBKDF2, 600 000 iteraciones | Cumplido dentro del alcance |
@@ -97,5 +98,4 @@ Capturas originales en [`evidencias/linea-base/`](evidencias/linea-base/) y medi
 | Uso de IA | La guía exige autoría propia y no menciona la IA. Se declaró en la Introducción | El equipo debe revisar la política de la CUN |
 | Pruebas con usuarios reales | No se realizaron; el informe lo declara | Posible trabajo futuro |
 | Teléfonos físicos | Solo emulación | El equipo, con el enlace publicado |
-| Rendimiento en el sitio publicado | Medido en local, con compresión | Repetir Lighthouse sobre la URL pública |
 | Fecha de la nota de la OMS sobre actividad física | La página muestra 4 de noviembre de 2026; puede ser fecha de actualización | Se citó solo el año |
