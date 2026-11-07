@@ -1,381 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>CASAACTIVA | Entrena desde casa</title>
-
-    <link rel="stylesheet" href="estilos.css">
-
-    <!-- TIPOGRAFIAS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="no-referrer">
+    <title>Casa Activa | Recomendaciones saludables desde casa</title>
+    <meta name="description" content="Recomendaciones confiables de alimentación, actividad física, descanso y bienestar, adaptadas a ti y fáciles de convertir en hábitos.">
+    <meta name="theme-color" content="#171b17">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/fuentes/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fuentes/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="src/estilos/tokens.css">
+    <link rel="stylesheet" href="src/estilos/base.css">
+    <link rel="stylesheet" href="src/estilos/componentes.css">
+    <link rel="stylesheet" href="src/estilos/vistas.css">
+    <!-- modulos:inicio (generado por scripts/actualizar-modulos.mjs) -->
+    <link rel="modulepreload" href="src/datos/almacen.js">
+    <link rel="modulepreload" href="src/datos/contenidos-semilla.js">
+    <link rel="modulepreload" href="src/datos/repositorios.js">
+    <link rel="modulepreload" href="src/datos/semilla.js">
+    <link rel="modulepreload" href="src/dominio/busqueda.js">
+    <link rel="modulepreload" href="src/dominio/catalogo.js">
+    <link rel="modulepreload" href="src/dominio/habitos.js">
+    <link rel="modulepreload" href="src/dominio/recomendador.js">
+    <link rel="modulepreload" href="src/dominio/salud.js">
+    <link rel="modulepreload" href="src/dominio/validacion.js">
+    <link rel="modulepreload" href="src/nucleo/dom.js">
+    <link rel="modulepreload" href="src/nucleo/enrutador.js">
+    <link rel="modulepreload" href="src/servicios/autenticacion.js">
+    <link rel="modulepreload" href="src/servicios/catalogo.js">
+    <link rel="modulepreload" href="src/servicios/personal.js">
+    <link rel="modulepreload" href="src/ui/componentes.js">
+    <link rel="modulepreload" href="src/ui/formularios.js">
+    <link rel="modulepreload" href="src/ui/grafico.js">
+    <link rel="modulepreload" href="src/ui/marco.js">
+    <link rel="modulepreload" href="src/ui/retro.js">
+    <link rel="modulepreload" href="src/vistas/acceso.js">
+    <link rel="modulepreload" href="src/vistas/admin.js">
+    <link rel="modulepreload" href="src/vistas/asistente.js">
+    <link rel="modulepreload" href="src/vistas/detalle.js">
+    <link rel="modulepreload" href="src/vistas/explorar.js">
+    <link rel="modulepreload" href="src/vistas/favoritos.js">
+    <link rel="modulepreload" href="src/vistas/habitos.js">
+    <link rel="modulepreload" href="src/vistas/informativas.js">
+    <link rel="modulepreload" href="src/vistas/inicio.js">
+    <link rel="modulepreload" href="src/vistas/mi-perfil.js">
+    <link rel="modulepreload" href="src/vistas/para-ti.js">
+    <!-- modulos:fin -->
+    <script type="module" src="src/main.js"></script>
 </head>
-
 <body>
-
-    <!-- =========================
-         BARRA DE NAVEGACION
-    ========================== -->
-
-    <header class="navbar">
-
-        <div class="logo">
-
-            <div class="logo-icon">ϟ</div>
-
-            <h2>CASA<span>ACTIVA</span></h2>
-
-        </div>
-
-        <nav>
-            <a href="#ingreso" class="btn-ingresar">Ingresar</a>
-            <a href="#registro" class="btn-registro">Registrarme</a>
-        </nav>
-
-    </header>
-
-
-    <!-- =========================
-         SECCION PRINCIPAL
-    ========================== -->
-
-    <main class="contenedor">
-
-        <!-- PANEL IZQUIERDO -->
-
-        <section class="presentacion">
-
-            <div class="etiqueta">
-                ✦ &nbsp; ENTRENA DESDE CASA
-            </div>
-
-            <h1>
-                MUÉVETE.
-                <span>SIÉNTETE</span>
-                <span>BIEN.</span>
-            </h1>
-
-            <p class="descripcion">
-                Rutinas simples y guiadas para entrenar a tu ritmo,
-                sin equipamiento y desde cualquier lugar.
-            </p>
-
-            <div class="beneficios">
-
-                <div>✓ Rutinas personalizadas</div>
-                <div>✓ Ejercicios para todos</div>
-                <div>✓ Mejora tu bienestar</div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PANEL DERECHO -->
-
-        <section class="panel-imagen">
-
-            <div class="formulario">
-
-                <!-- PESTAÑAS -->
-
-                <div class="pestanas">
-
-                    <a href="#ingreso" class="pestana activa">
-                        Ingreso
-                    </a>
-
-                    <a href="#registro" class="pestana">
-                        Registro
-                    </a>
-
-                </div>
-
-
-                <!-- FORMULARIO DE INGRESO -->
-
-                <div class="contenido-formulario" id="ingreso">
-
-                    <small>BIENVENIDO DE NUEVO</small>
-
-                    <h2>INGRESA A TU CUENTA</h2>
-
-                    <p>Continúa con tu próxima rutina.</p>
-
-                    <form action="#" method="post">
-
-                        <label for="correo">
-                            Correo electrónico
-                        </label>
-
-                        <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            placeholder="nombre@correo.com"
-                            required
-                        >
-
-                        <label for="password">
-                            Contraseña
-                        </label>
-
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Mínimo 8 caracteres"
-                            minlength="8"
-                            required
-                        >
-
-                        <div class="recuperar">
-
-                            <a href="#recuperar">
-                                ¿Olvidaste tu contraseña?
-                            </a>
-
-                        </div>
-
-                        <button type="submit" class="btn-principal">
-                            INGRESAR A MI CUENTA
-                        </button>
-
-                    </form>
-
-                    <div class="separador">
-
-                        ¿No tienes una cuenta?
-
-                        <a href="#registro">
-                            Regístrate aquí
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- FORMULARIO DE REGISTRO -->
-
-                <div class="contenido-formulario registro" id="registro">
-
-                    <small>ÚNETE A CASA ACTIVA</small>
-
-                    <h2>CREA TU CUENTA</h2>
-
-                    <p>Empieza hoy a transformar tu bienestar.</p>
-
-                    <form action="#" method="post">
-
-                        <label for="nombre">
-                            Nombre completo
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            placeholder="Ingresa tu nombre"
-                            required
-                        >
-
-                        <label for="correo-registro">
-                            Correo electrónico
-                        </label>
-
-                        <input
-                            type="email"
-                            id="correo-registro"
-                            name="correo"
-                            placeholder="nombre@correo.com"
-                            required
-                        >
-
-                        <label for="password-registro">
-                            Contraseña
-                        </label>
-
-                        <input
-                            type="password"
-                            id="password-registro"
-                            name="password"
-                            placeholder="Mínimo 8 caracteres"
-                            minlength="8"
-                            required
-                        >
-
-                        <button type="submit" class="btn-principal">
-                            CREAR MI CUENTA
-                        </button>
-
-                    </form>
-
-                    <div class="separador">
-
-                        ¿Ya tienes una cuenta?
-
-                        <a href="#ingreso">
-                            Inicia sesión
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         SECCION DE RUTINAS
-    ========================== -->
-
-    <section class="rutinas" id="rutinas">
-
-        <!-- ENCABEZADO -->
-
-        <div class="rutinas-encabezado">
-
-            <h2>
-                EMPIEZA CON ALGO
-                <span>SIMPLE</span>
-            </h2>
-
-            <p>
-                Elige una rutina corta y empieza a moverte.
-                No necesitas experiencia.
-            </p>
-
-        </div>
-
-
-        <!-- TARJETAS DE EJERCICIOS -->
-
-        <div class="rutinas-grid">
-
-
-            <!-- RUTINA 01 -->
-
-            <article class="rutina-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=900"
-                    alt="Ejercicio de fuerza en casa"
-                >
-
-                <div class="rutina-overlay"></div>
-
-                <span class="rutina-numero">01</span>
-
-                <a href="https://www.youtube.com/watch?v=-fvuMkWRAh4" class="btn-play" aria-label="Ver rutina de fuerza">
-                    ▷
-                </a>
-
-                <div class="rutina-info">
-
-                    <small>
-                        25 MIN · TODO EL CUERPO
-                    </small>
-
-                    <h3>FUERZA EN CASA</h3>
-
-                </div>
-
-            </article>
-
-
-            <!-- RUTINA 02 -->
-
-            <article class="rutina-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900"
-                    alt="Ejercicio cardiovascular suave"
-                >
-
-                <div class="rutina-overlay"></div>
-
-                <span class="rutina-numero">02</span>
-
-                <a href="https://www.youtube.com/watch?v=dNAl9dEvcVA" class="btn-play" aria-label="Ver rutina de cardio">
-                    ▷
-                </a>
-
-                <div class="rutina-info">
-
-                    <small>
-                        20 MIN · BAJO IMPACTO
-                    </small>
-
-                    <h3>CARDIO SUAVE</h3>
-
-                </div>
-
-            </article>
-
-
-            <!-- RUTINA 03 -->
-
-            <article class="rutina-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1562088287-bde35a1ea917?w=900"
-                    alt="Ejercicio de movilidad diaria"
-                >
-
-                <div class="rutina-overlay"></div>
-
-                <span class="rutina-numero">03</span>
-
-                <a href="https://www.youtube.com/watch?v=NBpsqBQceSU&t=2sz class="btn-play" aria-label="Ver rutina de movilidad">
-                    ▷
-                </a>
-
-                <div class="rutina-info">
-
-                    <small>
-                        15 MIN · CUERPO COMPLETO
-                    </small>
-
-                    <h3>MOVILIDAD DIARIA</h3>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PIE DE PAGINA
-    ========================== -->
-
-    <footer class="footer">
-
-        <h2>CASA<span>ACTIVA</span></h2>
-
-        <p>
-            Muévete. Siéntete bien.
-            Entrena desde casa.
-        </p>
-
-        <small>© 2026 CASA ACTIVA | Todos los derechos reservados.</small>
-
-    </footer>
-
-
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <div id="app-cabecera"></div>
+    <main id="contenido" tabindex="-1"></main>
+    <div id="app-pie"></div>
+    <div id="app-movil"></div>
+    <div id="avisos" class="avisos" role="status" aria-live="polite"></div>
+    <div id="anuncios" class="oculto" role="status" aria-live="polite"></div>
+    <noscript><p class="sin-js">Casa Activa necesita JavaScript para funcionar. Actívalo en tu navegador para continuar.</p></noscript>
 </body>
-
 </html>

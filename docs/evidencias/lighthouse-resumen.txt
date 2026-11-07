@@ -1,0 +1,9 @@
+Resumen de Lighthouse 13.6 (medición local con compresión gzip).
+Columnas: rendimiento, accesibilidad, buenas prácticas, SEO.
+
+mvp-escritorio               99  95  96  91  LCP 0.9 s  CLS 0.016  TBT 0 ms  peso Total size was 522 KiB  reqs 12
+mvp-movil                    84  95  96  91  LCP 4.5 s  CLS 0.018  TBT 0 ms  peso Total size was 522 KiB  reqs 12
+nuevo-explorar-movil         99 100 100 100  LCP 2.3 s  CLS 0  TBT 0 ms  peso Total size was 556 KiB  reqs 48
+nuevo-ingreso-movil          95 100 100 100  LCP 2.9 s  CLS 0  TBT 0 ms  peso Total size was 218 KiB  reqs 42
+nuevo-inicio-escritorio     100 100 100 100  LCP 0.8 s  CLS 0  TBT 0 ms  peso Total size was 398 KiB  reqs 47
+nuevo-inicio-movil           93 100 100 100  LCP 3.2 s  CLS 0  TBT 0 ms  peso Total size was 398 KiB  reqs 47

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Casa Activa · Mapa de pantallas</title>
+<style>
+  body { margin: 0; background: #fff; }
+  svg { display: block; font-family: Arial, Helvetica, sans-serif; }
+  .zona { fill: #f6f6f6; stroke: #777; stroke-width: 2; stroke-dasharray: 8 6; }
+  .zt { font-size: 17px; font-weight: 700; fill: #333; }
+  .nodo { fill: #fff; stroke: #333; stroke-width: 2; }
+  .nt { font-size: 16px; font-weight: 700; fill: #111; text-anchor: middle; }
+  .ns { font-size: 13px; fill: #555; text-anchor: middle; }
+  .a { fill: none; stroke: #333; stroke-width: 2; marker-end: url(#f); }
+  .ida { marker-start: url(#f); }
+  .d { stroke-dasharray: 6 5; }
+  .et { font-size: 13px; fill: #333; paint-order: stroke; stroke: #f6f6f6; stroke-width: 4px; }
+</style>
+</head>
+<body>
+<svg id="mapa" xmlns="http://www.w3.org/2000/svg" width="1180" height="700" viewBox="0 0 1180 700" role="img" aria-label="Mapa de pantallas de Casa Activa">
+  <defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#333"/></marker></defs>
+
+  <rect class="zona" x="16" y="16" width="1148" height="222"/>
+  <text class="zt" x="32" y="42">Zona pública (visitante)</text>
+  <rect class="zona" x="16" y="258" width="1148" height="262"/>
+  <text class="zt" x="1148" y="286" text-anchor="end">Zona privada (usuario con sesión)</text>
+  <rect class="zona" x="16" y="540" width="1148" height="146"/>
+  <text class="zt" x="32" y="566">Zona de administración (rol administrador)</text>
+
+  <!-- Pública -->
+  <rect class="nodo" x="40" y="94" width="160" height="70"/><text class="nt" x="120" y="124">W1 Inicio</text><text class="ns" x="120" y="144">buscador, categorías</text>
+  <rect class="nodo" x="256" y="84" width="150" height="52"/><text class="nt" x="331" y="115">W2 Ingreso</text>
+  <rect class="nodo" x="256" y="166" width="150" height="52"/><text class="nt" x="331" y="197">W3 Registro</text>
+  <rect class="nodo" x="478" y="94" width="170" height="70"/><text class="nt" x="563" y="124">W6 Explorar</text><text class="ns" x="563" y="144">búsqueda y filtros</text>
+  <rect class="nodo" x="716" y="94" width="170" height="70"/><text class="nt" x="801" y="124">W7 Detalle</text><text class="ns" x="801" y="144">pasos y fuente</text>
+  <rect class="nodo" x="954" y="94" width="190" height="70"/><text class="nt" x="1049" y="120">Política de datos</text><text class="ns" x="1049" y="142">enlace en el pie de página</text>
+
+  <path class="a" d="M200 118 254 108"/>
+  <path class="a ida" d="M305 136V164"/>
+  <path class="a" d="M200 142 254 186"/>
+  <path class="a" d="M120 94V64H563V92"/>
+  <text class="et" x="240" y="60">buscar o elegir categoría</text>
+  <path class="a" d="M648 129H714"/>
+  <path class="a" d="M801 94V52H331V82"/>
+  <text class="et" x="540" y="48">guardar sin sesión</text>
+
+  <!-- Privada -->
+  <rect class="nodo" x="170" y="348" width="190" height="74"/><text class="nt" x="265" y="380">W4 Asistente</text><text class="ns" x="265" y="400">perfil de salud (opcional)</text>
+  <rect class="nodo" x="420" y="348" width="190" height="74"/><text class="nt" x="515" y="380">W5 Para ti</text><text class="ns" x="515" y="400">plan y recomendaciones</text>
+  <rect class="nodo" x="690" y="308" width="170" height="60"/><text class="nt" x="775" y="344">W8 Favoritos</text>
+  <rect class="nodo" x="690" y="404" width="170" height="60"/><text class="nt" x="775" y="440">W9 Hábitos</text>
+  <rect class="nodo" x="934" y="348" width="190" height="74"/><text class="nt" x="1029" y="380">W10 Mi perfil</text><text class="ns" x="1029" y="400">cuenta, salud, privacidad</text>
+
+  <path class="a" d="M360 385H418"/>
+  <path class="a" d="M610 368 688 342"/>
+  <path class="a" d="M610 402 688 430"/>
+  <path class="a" d="M860 342 932 370"/>
+  <path class="a" d="M860 430 932 400"/>
+
+  <path class="a d" d="M300 218V346"/>
+  <text class="et" x="192" y="310">al registrarse</text>
+  <path class="a d" d="M406 110H446V346"/>
+  <text class="et" x="358" y="280">al ingresar</text>
+  <path class="a d ida" d="M545 164V346"/>
+  <text class="et" x="478" y="310">explorar</text>
+  <path class="a d" d="M590 346 742 166"/>
+  <text class="et" x="640" y="212">abrir</text>
+  <path class="a d" d="M815 306V166"/>
+  <text class="et" x="824" y="222">abrir</text>
+
+  <!-- Admin -->
+  <rect class="nodo" x="420" y="590" width="210" height="74"/><text class="nt" x="525" y="622">W11 Listado</text><text class="ns" x="525" y="642">estado y acciones</text>
+  <rect class="nodo" x="740" y="590" width="210" height="74"/><text class="nt" x="845" y="622">W12 Formulario</text><text class="ns" x="845" y="642">crear y editar</text>
+  <path class="a ida" d="M630 627H738"/>
+  <path class="a d" d="M515 422V588"/>
+  <text class="et" x="330" y="500">solo con rol administrador</text>
+  <text class="et" x="970" y="622">Lo publicado aparece</text>
+  <text class="et" x="970" y="640">en W5, W6 y W7</text>
+</svg>
+</body>
+</html>

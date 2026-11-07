@@ -1,0 +1,55 @@
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  /* El foco del teclado no debe quedar oculto bajo las barras fijas. */
+  scroll-padding-top: calc(var(--cabecera) + var(--e-4));
+  scroll-padding-bottom: calc(var(--barra-movil) + var(--e-4));
+}
+body {
+  font-family: var(--fuente-texto);
+  font-size: var(--t-md);
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--crema);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: calc(var(--barra-movil) + env(safe-area-inset-bottom));
+  overflow-wrap: anywhere;
+}
+main { flex: 1; }
+main:focus, main:focus-visible { outline: none; box-shadow: none; }
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3, .titulo { font-family: var(--fuente-titulo); font-weight: 800; line-height: 1.05; }
+h1 { font-size: var(--t-2xl); }
+h2 { font-size: var(--t-xl); }
+h3 { font-size: 1.375rem; }
+
+:focus-visible { outline: 3px solid var(--tinta); outline-offset: 2px; box-shadow: 0 0 0 2px var(--papel); border-radius: 2px; }
+.sobre-oscuro :focus-visible { outline-color: var(--lima); }
+
+.icono { width: 1.25em; height: 1.25em; flex: none; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.saltar {
+  position: fixed; top: var(--e-2); left: var(--e-2); z-index: 100;
+  background: var(--tinta); color: var(--papel); padding: var(--e-3) var(--e-4); font-weight: 700; border-radius: var(--radio);
+  transform: translateY(-200%);
+}
+.saltar:focus { transform: none; }
+
+@media (min-width: 960px) {
+  body { padding-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

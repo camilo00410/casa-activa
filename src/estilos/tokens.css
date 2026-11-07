@@ -1,0 +1,61 @@
+/* Sistema de diseño de Casa Activa. Cada color de texto cumple WCAG 2.2 AA sobre su fondo;
+   la prueba tests/unit/contraste.test.js lo verifica leyendo este archivo. */
+@font-face { font-family: 'Barlow Condensed'; font-weight: 700; font-style: normal; font-display: swap; src: url('../../assets/fuentes/barlow-condensed-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-weight: 800; font-style: normal; font-display: swap; src: url('../../assets/fuentes/barlow-condensed-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-weight: 800; font-style: italic; font-display: swap; src: url('../../assets/fuentes/barlow-condensed-latin-800-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat'; font-weight: 100 900; font-style: normal; font-display: swap; src: url('../../assets/fuentes/montserrat-latin-wght-normal.woff2') format('woff2-variations'); }
+
+:root {
+  --tinta: #171b17;
+  --crema: #f3f1e9;
+  --papel: #fffefa;
+  --campo: #efeee7;
+  --gris: #585e59;
+  --borde: #7a7f79;
+  --linea: #dcdad0;
+  --lima: #b6ed28;
+  --oliva: #526d00;
+  --error: #a4261b;
+  --error-fondo: #fbe9e6;
+  --exito: #2c6e2f;
+  --exito-fondo: #e4f3e4;
+  --aviso-fondo: #fdf3d3;
+
+  --alimentacion: #a2470f;
+  --alimentacion-fondo: #fbeadf;
+  --actividad: #4a6200;
+  --actividad-fondo: #ecf6cc;
+  --descanso: #3d48a6;
+  --descanso-fondo: #e6e8f8;
+  --bienestar: #0b6e66;
+  --bienestar-fondo: #d8efec;
+
+  --fuente-titulo: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --fuente-texto: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --t-xs: 0.8125rem;
+  --t-sm: 0.875rem;
+  --t-md: 1rem;
+  --t-lg: 1.125rem;
+  --t-xl: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --t-2xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --t-3xl: clamp(3.25rem, 2rem + 6vw, 7rem);
+
+  --e-1: 4px;
+  --e-2: 8px;
+  --e-3: 12px;
+  --e-4: 16px;
+  --e-5: 24px;
+  --e-6: 32px;
+  --e-7: 48px;
+  --e-8: 72px;
+
+  --radio: 4px;
+  --radio-lg: 12px;
+  --sombra: 0 2px 12px rgb(23 27 23 / 0.07);
+  --sombra-alta: 0 10px 35px rgb(23 27 23 / 0.16);
+  --ancho-max: 1280px;
+  --cabecera: 72px;
+  --barra-movil: 64px;
+  --toque: 44px;
+}

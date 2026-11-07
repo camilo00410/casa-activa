@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Casa Activa · Wireframes de baja fidelidad</title>
+<link rel="stylesheet" href="wf.css">
+</head>
+<body>
+<div id="raiz"></div>
+<script type="module">
+  import { PANTALLAS } from './pantallas.mjs';
+  document.getElementById('raiz').append(...PANTALLAS.map((p) => {
+    const s = document.createElement('section');
+    s.className = 'wf-frame';
+    s.id = p.archivo;
+    s.innerHTML = `<div class="wf-chrome"><span>${p.id} · ${p.titulo}</span><span>WIREFRAME · BAJA FIDELIDAD</span></div>${p.html}`;
+    return s;
+  }));
+  document.body.dataset.listo = '1';
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "casa-activa",
+  "version": "1.0.0",
+  "description": "Prototipo funcional de una página de recomendaciones saludables. ACA de Ingeniería Web, CUN.",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node scripts/servidor.mjs 8080",
+    "test": "node --test \"tests/unit/*.test.js\"",
+    "test:e2e": "playwright test",
+    "test:todo": "npm test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0"
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Casa Activa · Sistema de diseño</title>
+<link rel="stylesheet" href="../src/estilos/tokens.css">
+<link rel="stylesheet" href="../src/estilos/base.css">
+<link rel="stylesheet" href="../src/estilos/componentes.css">
+<style>
+  body { padding: 0; background: var(--crema); display: block; }
+  .lamina { width: 1180px; margin: 0 auto 32px; padding: 32px; background: var(--crema); }
+  .lamina > h2 { font-size: 2.5rem; margin-bottom: 4px; }
+  .lamina > p { color: var(--gris); margin-bottom: 20px; }
+  .swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .swatch { border-radius: 8px; overflow: hidden; border: 1px solid var(--linea); background: var(--papel); }
+  .swatch i { display: block; height: 92px; }
+  .swatch div { padding: 8px 10px; font-size: 13px; line-height: 1.35; }
+  .swatch strong { display: block; font-size: 14px; }
+  .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+  .cat { padding: 16px; border-radius: 8px; font-size: 13px; }
+  .cat strong { font-family: var(--fuente-titulo); font-size: 26px; display: block; }
+  .tipo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .muestra { background: var(--papel); border: 1px solid var(--linea); border-radius: 8px; padding: 20px; }
+  .muestra small { color: var(--gris); display: block; margin-bottom: 8px; }
+  .iconos { display: grid; grid-template-columns: repeat(10, 1fr); gap: 10px; }
+  .iconos div { background: var(--papel); border: 1px solid var(--linea); border-radius: 8px; padding: 12px 2px; text-align: center; font-size: 11px; }
+  .iconos .icono { width: 28px; height: 28px; margin: 0 auto 6px; }
+  .comp { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: start; }
+  .comp h3 { font-size: 20px; margin-bottom: 10px; }
+  .fila { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .tarjeta { max-width: 360px; }
+</style>
+</head>
+<body>
+<section class="lamina" id="paleta">
+  <h2>Paleta de color</h2>
+  <p>Se conserva la identidad del MVP. El oliva se oscureció para cumplir el contraste AA como color de texto.</p>
+  <div class="swatches" id="swatches"></div>
+  <div class="cats" id="cats"></div>
+</section>
+<section class="lamina" id="tipografia">
+  <h2>Tipografía</h2>
+  <p>Dos familias con funciones separadas: una da carácter a los títulos y otra da legibilidad al texto.</p>
+  <div class="tipo">
+    <div class="muestra"><small>Barlow Condensed · 700 y 800 · títulos</small>
+      <div class="titulo" style="font-size:72px">CUÍDATE.</div>
+      <div class="titulo" style="font-size:72px;font-style:italic;color:var(--oliva)">SIÉNTETE BIEN.</div>
+      <div class="titulo" style="font-size:32px;margin-top:8px">Título de sección · 32 px</div>
+      <div class="titulo" style="font-size:22px">Título de tarjeta · 22 px</div>
+    </div>
+    <div class="muestra"><small>Montserrat · variable · interfaz y lectura</small>
+      <p style="font-size:18px">Texto destacado · 18 px. Recomendaciones confiables de alimentación, actividad física, descanso y bienestar.</p>
+      <p style="font-size:16px;margin-top:8px">Texto base · 16 px. Es también el tamaño de los campos de formulario.</p>
+      <p style="font-size:14px;margin-top:8px">Texto secundario · 14 px. Resúmenes y descripciones breves.</p>
+      <p style="font-size:13px;margin-top:8px;font-weight:700">Etiquetas · 13 px en negrilla. Metadatos y categorías.</p>
+    </div>
+  </div>
+</section>
+<section class="lamina" id="iconografia">
+  <h2>Iconografía</h2>
+  <p>Lucide: trazo uniforme de 2 px, redondeado y sin relleno. El icono siempre acompaña a un texto; nunca comunica solo.</p>
+  <div class="iconos" id="iconos"></div>
+</section>
+<section class="lamina" id="componentes">
+  <h2>Componentes</h2>
+  <p>Una sola biblioteca de piezas para que todas las pantallas se comporten igual.</p>
+  <div class="comp">
+    <div>
+      <h3>Botones</h3>
+      <div class="fila"><button class="btn btn-primario">Primario</button><button class="btn btn-secundario">Secundario</button></div>
+      <div class="fila"><button class="btn btn-peligro">Peligro</button><button class="btn btn-texto">Texto</button></div>
+      <h3>Etiquetas</h3>
+      <div class="fila"><span class="chip">Hasta 20 min</span><span class="chip chip-activo">Activo</span></div>
+      <div class="fila" id="chips"></div>
+      <h3>Estados</h3>
+      <div class="fila"><span class="estado estado-publicado">Publicada</span><span class="estado estado-borrador">Borrador</span></div>
+    </div>
+    <div>
+      <h3>Campos</h3>
+      <div class="campo" style="margin-bottom:12px"><label>Correo electrónico</label><input value="nombre@correo.com" readonly></div>
+      <div class="campo campo-invalido"><label>Contraseña</label><input value="123" readonly><p class="error-campo">Usa al menos 8 caracteres.</p></div>
+      <h3 style="margin-top:16px">Avisos</h3>
+      <div class="aviso aviso-info" style="margin-bottom:8px"><div>Información para el usuario.</div></div>
+      <div class="aviso aviso-exito" style="margin-bottom:8px"><div>Acción completada.</div></div>
+      <div class="aviso aviso-error"><div>Algo necesita atención.</div></div>
+    </div>
+    <div>
+      <h3>Indicador</h3>
+      <div class="indicador" style="margin-bottom:16px"><span class="indicador-icono"><svg class="icono"><use href="../assets/iconos.svg#i-flame"></use></svg></span><div class="indicador-datos"><strong>6 días</strong><span>Mejor racha activa</span></div></div>
+      <h3>Tarjeta</h3>
+      <article class="tarjeta"><div class="tarjeta-imagen" style="aspect-ratio:16/9"><img src="../assets/img/cama.webp" alt=""></div><div class="tarjeta-cuerpo"><div class="tarjeta-fila"><span class="chip-cat cat-descanso">Descanso</span><span class="btn-corazon"><svg class="icono"><use href="../assets/iconos.svg#i-heart"></use></svg></span></div><h3 style="margin:0">Acuéstate a la misma hora</h3><p class="meta"><span>5 min</span><span>Principiante</span></p></div></article>
+    </div>
+  </div>
+</section>
+<script type="module">
+  const lin = (c) => { const v = c / 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
+  const lum = (h) => { const n = parseInt(h.slice(1), 16); return 0.2126 * lin((n >> 16) & 255) + 0.7152 * lin((n >> 8) & 255) + 0.0722 * lin(n & 255); };
+  const contraste = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return ((x + 0.05) / (y + 0.05)).toFixed(2).replace('.', ','); };
+  const token = (n) => getComputedStyle(document.documentElement).getPropertyValue(`--${n}`).trim();
+  const fila = [['tinta', 'Tinta', 'Texto principal', 'crema'], ['crema', 'Crema', 'Fondo de página', 'tinta'], ['papel', 'Papel', 'Superficies', 'tinta'], ['lima', 'Lima', 'Acción principal', 'tinta'], ['oliva', 'Oliva', 'Acento en texto', 'crema'], ['gris', 'Gris', 'Texto secundario', 'crema']];
+  document.getElementById('swatches').innerHTML = fila.map(([t, n, u, f]) => `<div class="swatch"><i style="background:var(--${t})"></i><div><strong>${n}</strong>${token(t)}<br>${u}<br>${contraste(token(t), token(f))}:1 con ${f}</div></div>`).join('');
+  const cats = [['alimentacion', 'Alimentación'], ['actividad', 'Actividad física'], ['descanso', 'Descanso'], ['bienestar', 'Bienestar']];
+  document.getElementById('cats').innerHTML = cats.map(([c, n]) => `<div class="cat cat-${c}"><strong>${n}</strong>${token(c)} sobre ${token(`${c}-fondo`)}<br>Contraste ${contraste(token(c), token(`${c}-fondo`))}:1</div>`).join('');
+  document.getElementById('chips').innerHTML = cats.map(([c, n]) => `<span class="chip-cat cat-${c}">${n}</span>`).join('');
+  const ic = ['apple', 'dumbbell', 'moon', 'leaf', 'search', 'heart', 'user', 'list-checks', 'flame', 'target', 'clock', 'gauge', 'lightbulb', 'shield-check', 'lock', 'download', 'trash-2', 'pencil', 'plus', 'check'];
+  document.getElementById('iconos').innerHTML = ic.map((n) => `<div><svg class="icono"><use href="../assets/iconos.svg#i-${n}"></use></svg>${n}</div>`).join('');
+  document.body.dataset.listo = '1';
+</script>
+</body>
+</html>
